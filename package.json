@@ -30,31 +30,12 @@
     "lint:conflict": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "chromatic": "npx chromatic --project-token ${CHROMATIC_PROJECT_TOKEN}"
+    "chromatic": "npx chromatic --project-token ${CHROMATIC_PROJECT_TOKEN}",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      },
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
+  "lint-staged": {
+  "*.js,jsx,ts,tsx,json": ["fix"]
   },
   "browserslist": {
     "production": [
@@ -84,6 +65,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.26.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.4.1"
   }
 }

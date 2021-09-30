@@ -8,7 +8,8 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["plugin:react/recommended", "standard", "prettier"],
+  extends: ["plugin:react/recommended", "standard","react-app",
+    "react-app/jest", "prettier"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
