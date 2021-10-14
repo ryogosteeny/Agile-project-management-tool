@@ -23,9 +23,7 @@ const textFieldStyle = css`
   cursor: inherit;
   border-radius: 2px;
   padding: 8px 6px;
-  font-family: 'Noto Sans JP', -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
-  font-size: 14px;
+  max-width: 100%;
 `;
 
 const labelTitleStyle = css`
