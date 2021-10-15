@@ -1,5 +1,10 @@
 import React, { VFC } from 'react';
+import { StyleThemeProvider } from './theme/StyleThemeProvider';
 
 export const App: VFC = () => {
-  return <div />;
+  return (
+    <StyleThemeProvider>
+      <div />
+    </StyleThemeProvider>
+  );
 };
