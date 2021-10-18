@@ -1,7 +1,7 @@
 import React, { ReactNode, VFC } from 'react';
 import emotionReset from 'emotion-reset';
 import { Global, css, ThemeProvider } from '@emotion/react';
-import { pmtTheme } from './theme';
+import { styleTheme } from './theme';
 
 interface Props {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface Props {
 
 export const StyleThemeProvider: VFC<Props> = ({ children }) => {
   return (
-    <ThemeProvider theme={pmtTheme}>
+    <ThemeProvider theme={styleTheme}>
       <Global
         styles={css`
           ${emotionReset}

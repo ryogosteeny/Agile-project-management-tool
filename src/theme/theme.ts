@@ -1,4 +1,4 @@
-export const pmtTheme = {
+export const styleTheme = {
   colors: {
     primary: {
       light: '#4cd58d',
@@ -21,6 +21,11 @@ export const pmtTheme = {
       light: '#878787',
       main: '#545454',
       dark: '#3f3f3f',
+    },
+    border: {
+      light: '#e9eaee',
+      main: '#dfe1e6',
+      dark: '#b2b4b8',
     },
   },
   fontSize: {
