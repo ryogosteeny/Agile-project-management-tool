@@ -18,14 +18,14 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => {
-  return <BaseButton textColor={''} bgColor={''} hoverColor={''} labelText={''} onClick={() => {}} {...args} />;
+  return <BaseButton textColor={''} backGroundColor={''} hoverColor={''} labelText={''} onClick={() => {}} {...args} />;
 };
 
 export const PrimaryColor = Template.bind({});
 PrimaryColor.args = {
   labelText: '保存',
   textColor: styleTheme.colors.text.contrastText,
-  bgColor: styleTheme.colors.primary.main,
+  backGroundColor: styleTheme.colors.primary.main,
   hoverColor: styleTheme.colors.primary.light,
   onClick: () => {
     alert('保存');
@@ -36,7 +36,7 @@ export const SecondaryColor = Template.bind({});
 SecondaryColor.args = {
   labelText: '削除',
   textColor: styleTheme.colors.text.contrastText,
-  bgColor: styleTheme.colors.secondary.main,
+  backGroundColor: styleTheme.colors.secondary.main,
   hoverColor: styleTheme.colors.secondary.light,
   onClick: () => {
     alert('削除');
