@@ -2,19 +2,16 @@ import React from 'react';
 import { styleTheme } from '../theme/theme';
 import { css } from '@emotion/react';
 
-interface Props {
-  labelText: string;
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   textColor: string;
   backGroundColor: string;
   hoverColor: string;
   onClick: () => void;
 }
 
-export const BaseButton = ({ textColor, backGroundColor, hoverColor, labelText, onClick }: Props) => {
+export const BaseButton = ({ textColor, backGroundColor, hoverColor, onClick, ...props }: Props) => {
   return (
-    <button type="button" onClick={onClick} css={buttonStyle(textColor, backGroundColor, hoverColor)}>
-      {labelText}
-    </button>
+    <button type="button" onClick={onClick} css={buttonStyle(textColor, backGroundColor, hoverColor)} {...props} />
   );
 };
 
@@ -25,5 +22,10 @@ const buttonStyle = (textColor: string, backGroundColor: string, hoverColor: str
   background-color: ${backGroundColor};
   &:hover {
     background-color: ${hoverColor};
+  }
+  :disabled {
+    pointer-events: none;
+    background-color: ${styleTheme.colors.surface.main};
+    color: ${styleTheme.colors.text.topLight};
   }
 `;
