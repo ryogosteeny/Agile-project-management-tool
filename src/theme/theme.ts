@@ -1,12 +1,12 @@
 export const styleTheme = {
   colors: {
     primary: {
-      light: '#4cd58d',
+      light: '#8fe5b8',
       main: '#1FCA71',
       dark: '#19a25a',
     },
     secondary: {
-      light: '#e14f53',
+      light: '#eb888b',
       main: '#db2c30',
       dark: '#b72528',
     },

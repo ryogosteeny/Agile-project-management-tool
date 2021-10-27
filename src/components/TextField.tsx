@@ -28,7 +28,7 @@ const textFieldStyle = css`
 `;
 
 const labelStyle = css`
-  padding-bottom: 8px;
+  padding-bottom: ${styleTheme.spacing(1)}px;
   font-size: ${styleTheme.fontSize.medium}rem;
   color: ${styleTheme.colors.text.main};
 `;
