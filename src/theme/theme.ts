@@ -13,7 +13,7 @@ export const styleTheme = {
     surface: {
       light: '#f7f7f7',
       main: '#f5f5f5',
-      dark: '#cccccc',
+      dark: '#e9e9e9',
     },
     text: {
       contrastText: '#ffffff',
