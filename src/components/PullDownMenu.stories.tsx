@@ -52,8 +52,8 @@ Default.args = {
   width: 352,
 };
 
-export const OpenPullDown = Template.bind({});
-OpenPullDown.args = {
+export const OpenMenu = Template.bind({});
+OpenMenu.args = {
   labelText: 'プロジェクトリード',
   users: [
     { name: '斎藤', id: 1 },
@@ -64,8 +64,8 @@ OpenPullDown.args = {
   isOpen: true,
 };
 
-export const ClickPullDown = Template.bind({});
-ClickPullDown.args = {
+export const ClickMenuItem = Template.bind({});
+ClickMenuItem.args = {
   labelText: 'プロジェクトリード',
   users: [
     { name: '斎藤', id: 1 },
@@ -77,8 +77,8 @@ ClickPullDown.args = {
   value: '斎藤',
 };
 
-export const InputtedOpenPullDown = Template.bind({});
-InputtedOpenPullDown.args = {
+export const InputtedOpenMenu = Template.bind({});
+InputtedOpenMenu.args = {
   labelText: 'プロジェクトリード',
   users: [
     { name: '斎藤', id: 1 },
