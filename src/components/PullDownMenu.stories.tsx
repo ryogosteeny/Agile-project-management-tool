@@ -29,7 +29,7 @@ const Template: Story = (args) => {
       <PullDownMenu
         onClick={() => {}}
         labelText={''}
-        users={[]}
+        menuContents={[]}
         isOpen={false}
         onClickList={() => {}}
         value={''}
@@ -52,8 +52,8 @@ Default.args = {
   width: 352,
 };
 
-export const PullDownOpen = Template.bind({});
-PullDownOpen.args = {
+export const OpenPullDown = Template.bind({});
+OpenPullDown.args = {
   labelText: 'プロジェクトリード',
   users: [
     { name: '斎藤', id: 1 },
@@ -64,8 +64,8 @@ PullDownOpen.args = {
   isOpen: true,
 };
 
-export const PullDownClick = Template.bind({});
-PullDownClick.args = {
+export const ClickPullDown = Template.bind({});
+ClickPullDown.args = {
   labelText: 'プロジェクトリード',
   users: [
     { name: '斎藤', id: 1 },
@@ -77,8 +77,8 @@ PullDownClick.args = {
   value: '斎藤',
 };
 
-export const PullDownSecondOpen = Template.bind({});
-PullDownSecondOpen.args = {
+export const InputtedOpenPullDown = Template.bind({});
+InputtedOpenPullDown.args = {
   labelText: 'プロジェクトリード',
   users: [
     { name: '斎藤', id: 1 },

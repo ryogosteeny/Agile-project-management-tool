@@ -2,10 +2,15 @@ import React, { forwardRef } from 'react';
 import { css } from '@emotion/react';
 import { styleTheme } from '../theme/theme';
 
+interface MenuContentsType {
+  id: number;
+  name: string;
+}
+
 interface Props {
   onClick: () => void;
   labelText: string;
-  users: Users[];
+  menuContents: MenuContentsType[];
   isOpen: boolean;
   onClickList: (listItem: string) => void;
   value: string;
@@ -13,28 +18,23 @@ interface Props {
   isSelect: (name: string) => boolean;
 }
 
-interface Users {
-  id: number;
-  name: string;
-}
-
 const PullDownMenu = forwardRef<HTMLDivElement, Props>(
-  ({ onClick, labelText, isOpen, users, onClickList, value, onChange, isSelect }: Props, ref) => {
+  ({ onClick, labelText, isOpen, menuContents, onClickList, value, onChange, isSelect }: Props, ref) => {
     return (
-      <div css={pullDownMenuContainer} ref={ref}>
+      <div css={pullDownMenuContainerStyle} ref={ref}>
         <label css={labelStyle}>{labelText}</label>
         <input type="text" onClick={onClick} css={inputFieldStyle} value={value} onChange={onChange} />
 
         {isOpen && (
           <ul css={pullDownMenuStyle}>
-            {users.map((user) => {
+            {menuContents.map((menuItem) => {
               return (
                 <li
-                  key={user.id}
-                  css={pullDownMenuItemStyle(isSelect(user.name))}
-                  onClick={() => onClickList(user.name)}
+                  key={menuItem.id}
+                  css={pullDownMenuItemStyle(isSelect(menuItem.name))}
+                  onClick={() => onClickList(menuItem.name)}
                 >
-                  <span>{user.name}</span>
+                  <span>{menuItem.name}</span>
                 </li>
               );
             })}
@@ -45,7 +45,7 @@ const PullDownMenu = forwardRef<HTMLDivElement, Props>(
   }
 );
 
-const pullDownMenuContainer = css`
+const pullDownMenuContainerStyle = css`
   display: flex;
   flex-direction: column;
   max-width: 100%;
