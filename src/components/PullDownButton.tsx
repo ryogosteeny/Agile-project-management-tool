@@ -64,7 +64,7 @@ const iconStyle = css`
 `;
 
 const pullDownButtonStyle = css`
-  margin: ${styleTheme.spacing(0.5)}px 0 0;
+  margin-top: ${styleTheme.spacing(0.5)}px;
   padding: ${styleTheme.spacing(0.5)}px 0;
   box-shadow: ${styleTheme.boxShadow.main};
   border: 1px solid ${styleTheme.colors.border.main};
