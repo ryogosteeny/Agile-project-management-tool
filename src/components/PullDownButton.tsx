@@ -23,13 +23,11 @@ const PullDownButton = forwardRef<HTMLDivElement, Props>(({ onClick, isOpen, men
 
       {isOpen && (
         <ul css={pullDownButtonStyle}>
-          {menuContents.map((menuItem) => {
-            return (
-              <li key={menuItem.label} css={pullDownButtonItemStyle} onClick={menuItem.onClick}>
-                <span>{menuItem.label}</span>
-              </li>
-            );
-          })}
+          {menuContents.map((menuItem) => (
+            <li key={menuItem.label} css={pullDownButtonItemStyle} onClick={menuItem.onClick}>
+              <span>{menuItem.label}</span>
+            </li>
+          ))}
         </ul>
       )}
     </div>
@@ -68,7 +66,7 @@ const iconStyle = css`
 const pullDownButtonStyle = css`
   margin: ${styleTheme.spacing(0.5)}px 0 0;
   padding: ${styleTheme.spacing(0.5)}px 0;
-  box-shadow: 2px 3px 4px gainsboro;
+  box-shadow: ${styleTheme.boxShadow.main};
   border: 1px solid ${styleTheme.colors.border.main};
   border-radius: ${styleTheme.borderRadius.regular}px;
 `;

@@ -41,5 +41,10 @@ export const styleTheme = {
     large: 4,
     regular: 2,
   },
+  boxShadow: {
+    light: '1px 3px 4px #ebebeb',
+    main: '1px 3px 4px #dcdcdc',
+    dark: '1px 3px 4px #989898',
+  },
   spacing: (spaceValue: number) => spaceValue * 8,
 };
