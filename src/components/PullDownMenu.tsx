@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { css } from '@emotion/react';
 import { styleTheme } from '../theme/theme';
 
-interface MenuContentsType {
+interface MenuContents {
   id: number;
   name: string;
 }
@@ -10,7 +10,7 @@ interface MenuContentsType {
 interface Props {
   onClick: () => void;
   labelText: string;
-  menuContents: MenuContentsType[];
+  menuContents: MenuContents[];
   isOpen: boolean;
   onClickList: (listItem: string) => void;
   value: string;
@@ -27,17 +27,15 @@ const PullDownMenu = forwardRef<HTMLDivElement, Props>(
 
         {isOpen && (
           <ul css={pullDownMenuStyle}>
-            {menuContents.map((menuItem) => {
-              return (
-                <li
-                  key={menuItem.id}
-                  css={pullDownMenuItemStyle(isSelect(menuItem.name))}
-                  onClick={() => onClickList(menuItem.name)}
-                >
-                  <span>{menuItem.name}</span>
-                </li>
-              );
-            })}
+            {menuContents.map((menuItem) => (
+              <li
+                key={menuItem.id}
+                css={pullDownMenuItemStyle(isSelect(menuItem.name))}
+                onClick={() => onClickList(menuItem.name)}
+              >
+                <span>{menuItem.name}</span>
+              </li>
+            ))}
           </ul>
         )}
       </div>
