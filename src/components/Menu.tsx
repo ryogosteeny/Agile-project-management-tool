@@ -1,7 +1,8 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { css } from '@emotion/react';
 import { styleTheme } from '../theme/theme';
-import { BiDotsHorizontalRounded } from 'react-icons/bi';
+import { useOpen } from '../hooks/ui/useOpen';
+import { MenuIcon } from './icons/MenuIcon';
 
 interface ButtonMenuContentsType {
   label: string;
@@ -9,16 +10,18 @@ interface ButtonMenuContentsType {
 }
 
 interface Props {
-  onClick: () => void;
-  isOpen: boolean;
   menuContents: ButtonMenuContentsType[];
+  color: string;
+  size?: number;
 }
 
-const PullDownButton = forwardRef<HTMLDivElement, Props>(({ onClick, isOpen, menuContents }: Props, ref) => {
+export const Menu = ({ menuContents, color, size }: Props) => {
+  const { openTargetRef, isOpen, onClickOpenHandler } = useOpen();
+
   return (
-    <div css={pullDownButtonContainer} ref={ref}>
-      <button css={buttonStyle} type="button" onClick={onClick}>
-        <BiDotsHorizontalRounded size={24} css={iconStyle} />
+    <div css={pullDownButtonContainer} ref={openTargetRef}>
+      <button css={buttonStyle} type="button" onClick={onClickOpenHandler}>
+        <MenuIcon color={color} size={size} />
       </button>
 
       {isOpen && (
@@ -32,7 +35,7 @@ const PullDownButton = forwardRef<HTMLDivElement, Props>(({ onClick, isOpen, men
       )}
     </div>
   );
-});
+};
 
 const pullDownButtonContainer = css`
   display: flex;
@@ -59,10 +62,6 @@ const buttonStyle = css`
   }
 `;
 
-const iconStyle = css`
-  color: ${styleTheme.colors.text.dark};
-`;
-
 const pullDownButtonStyle = css`
   margin-top: ${styleTheme.spacing(0.5)}px;
   padding: ${styleTheme.spacing(0.5)}px 0;
@@ -79,6 +78,3 @@ const pullDownButtonItemStyle = css`
   cursor: pointer;
   &:hover { background-color: ${styleTheme.colors.surface.light}
 `;
-
-PullDownButton.displayName = 'PullDownButton';
-export default PullDownButton;
