@@ -12,7 +12,7 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => {
-  return <Menu menuContents={[]} color={''} size={0} {...args} />;
+  return <Menu menuContents={[]} {...args} />;
 };
 
 export const PrimaryMenu = Template.bind({});
