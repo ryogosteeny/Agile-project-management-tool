@@ -21,7 +21,7 @@ export const Menu = ({ menuContents, color, size }: Props) => {
   return (
     <div css={pullDownButtonContainer} ref={openTargetRef}>
       <button css={buttonStyle} type="button" onClick={onClickOpenHandler}>
-        <MenuIcon color={color} size={size} />
+        <MenuIcon />
       </button>
 
       {isOpen && (
