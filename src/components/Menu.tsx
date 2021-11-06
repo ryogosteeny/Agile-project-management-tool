@@ -11,11 +11,9 @@ interface ButtonMenuContentsType {
 
 interface Props {
   menuContents: ButtonMenuContentsType[];
-  color: string;
-  size?: number;
 }
 
-export const Menu = ({ menuContents, color, size }: Props) => {
+export const Menu = ({ menuContents }: Props) => {
   const { openTargetRef, isOpen, onClickOpenHandler } = useOpen();
 
   return (
