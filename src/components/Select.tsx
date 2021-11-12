@@ -117,13 +117,13 @@ const selectStyle = css`
   }
 `;
 
-const optionItemStyle = (id: boolean) => css`
+const optionItemStyle = (isSameID: boolean) => css`
   cursor: pointer;
   font-size: ${styleTheme.fontSize.medium}rem;
   padding: ${styleTheme.spacing(1)}px ${styleTheme.spacing(1)}px;
   outline-style: none;
   &:hover {
-    background-color: ${id ? '' : '#f7f7f7'};
+    background-color: ${isSameID ? '' : '#f7f7f7'};
   }
-  background-color: ${id ? '#bcefd4' : ''};
+  background-color: ${isSameID ? '#bcefd4' : ''};
 `;
