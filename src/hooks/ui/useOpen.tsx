@@ -8,6 +8,10 @@ export const useOpen = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeEventHandler = () => {
+    setIsOpen(false);
+  };
+
   const handleOutsideClick = (e: Event) => {
     if (openTargetRef.current && !openTargetRef.current.contains(e.target as Node)) {
       setIsOpen(false);
@@ -19,5 +23,5 @@ export const useOpen = () => {
     return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, []);
 
-  return { openTargetRef, isOpen, setIsOpen, openEventHandler };
+  return { openTargetRef, isOpen, closeEventHandler, openEventHandler };
 };
