@@ -11,19 +11,20 @@ interface Options {
 interface Props {
   labelText: string;
   options: Options[];
+  defaultValue?: Options;
 }
 
-export const Select = ({ labelText, options }: Props) => {
-  const { isOpen, setIsOpen, openTargetRef, openEventHandler } = useOpen();
+export const Select = ({ labelText, options, defaultValue }: Props) => {
+  const { isOpen, closeEventHandler, openTargetRef, openEventHandler } = useOpen();
   const [selectValue, setSelectValue] = useState<Options>({
-    id: 0,
-    value: '',
+    id: defaultValue?.id ?? 0,
+    value: defaultValue?.value ?? '',
   });
   const [searchText, setSearchText] = useState<string>('');
 
   const selectValueHandler = (e: ChangeEvent<HTMLSelectElement>): void => {
     setSelectValue({ id: Number(e.target[e.target.selectedIndex].getAttribute('id')), value: e.target.value });
-    setIsOpen(false);
+    closeEventHandler();
   };
 
   const searchTextHandler = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -43,6 +44,7 @@ export const Select = ({ labelText, options }: Props) => {
         value={selectValue.value}
         onChange={searchTextHandler}
         onFocus={openEventHandler}
+        defaultValue={selectValue.value}
       />
 
       {isOpen && <input value={searchText} onChange={searchTextHandler} autoFocus={true} css={inputTextStyle} />}
