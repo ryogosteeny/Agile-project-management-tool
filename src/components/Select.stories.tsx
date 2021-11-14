@@ -22,13 +22,13 @@ export default {
 const Template: Story = (args) => {
   return (
     <div style={args}>
-      <Select labelText={''} options={[]} {...args} />
+      <Select labelText={''} options={[]} defaultValue={undefined} {...args} />
     </div>
   );
 };
 
-export const ProjectRead = Template.bind({});
-ProjectRead.args = {
+export const ProjectCreatePage = Template.bind({});
+ProjectCreatePage.args = {
   labelText: 'プロジェクトリード',
   options: [
     { value: '斎藤', id: 1 },
@@ -36,4 +36,16 @@ ProjectRead.args = {
     { value: '田中', id: 3 },
   ],
   width: 352,
+};
+
+export const ProjectEditPage = Template.bind({});
+ProjectEditPage.args = {
+  labelText: 'プロジェクトリード',
+  options: [
+    { value: '斎藤', id: 1 },
+    { value: '中島', id: 2 },
+    { value: '田中', id: 3 },
+  ],
+  width: 352,
+  defaultValue: { value: '中島', id: 2 },
 };
