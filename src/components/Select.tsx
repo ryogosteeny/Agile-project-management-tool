@@ -4,7 +4,7 @@ import { styleTheme } from '../theme/theme';
 import { useOpen } from '../hooks/ui/useOpen';
 
 interface Options {
-  id: number;
+  id: string;
   value: string;
 }
 
@@ -17,13 +17,13 @@ interface Props {
 export const Select = ({ labelText, options, defaultValue }: Props) => {
   const { isOpen, closeEventHandler, openTargetRef, openEventHandler } = useOpen();
   const [selectValue, setSelectValue] = useState<Options>({
-    id: defaultValue?.id ?? 0,
+    id: defaultValue?.id ?? '',
     value: defaultValue?.value ?? '',
   });
   const [searchText, setSearchText] = useState<string>('');
 
   const selectValueHandler = (e: ChangeEvent<HTMLSelectElement>): void => {
-    setSelectValue({ id: Number(e.target[e.target.selectedIndex].getAttribute('id')), value: e.target.value });
+    setSelectValue({ id: e.target[e.target.selectedIndex].id, value: e.target.value });
     closeEventHandler();
   };
 
@@ -31,7 +31,7 @@ export const Select = ({ labelText, options, defaultValue }: Props) => {
     setSearchText(e.target.value);
   };
 
-  const isSelect = (id: number): boolean => {
+  const isSelect = (id: string): boolean => {
     return id === selectValue.id;
   };
 
@@ -44,7 +44,6 @@ export const Select = ({ labelText, options, defaultValue }: Props) => {
         value={selectValue.value}
         onChange={searchTextHandler}
         onFocus={openEventHandler}
-        defaultValue={selectValue.value}
       />
 
       {isOpen && <input value={searchText} onChange={searchTextHandler} autoFocus={true} css={inputTextStyle} />}
@@ -52,7 +51,7 @@ export const Select = ({ labelText, options, defaultValue }: Props) => {
         <select css={selectStyle} onChange={selectValueHandler} size={options.length}>
           {options.map((option) => (
             <option
-              id={String(option.id)}
+              id={option.id}
               value={option.value}
               label={option.value}
               key={option.id}
