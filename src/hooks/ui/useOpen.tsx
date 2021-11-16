@@ -4,8 +4,13 @@ export const useOpen = () => {
   const openTargetRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const onClickOpenHandler = () => {
+
+  const openEventHandler = () => {
     setIsOpen(!isOpen);
+  };
+
+  const closeEventHandler = () => {
+    setIsOpen(false);
   };
 
   const handleOutsideClick = (e: Event) => {
@@ -19,5 +24,6 @@ export const useOpen = () => {
     return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, []);
 
-  return { openTargetRef, isOpen, onClickOpenHandler };
+
+  return { openTargetRef, isOpen, closeEventHandler, openEventHandler };
 };
