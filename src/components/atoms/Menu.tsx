@@ -1,8 +1,8 @@
 import React from 'react';
 import { css } from '@emotion/react';
-import { styleTheme } from '../theme/theme';
-import { useOpen } from '../hooks/ui/useOpen';
-import { MenuIcon } from './icons/MenuIcon';
+import { styleTheme } from '../../providers/theme/theme';
+import { useOpen } from '../../hooks/ui/useOpen';
+import { MenuIcon } from '../icons/MenuIcon';
 
 interface ButtonMenuContentsType {
   label: string;
@@ -14,11 +14,11 @@ interface Props {
 }
 
 export const Menu = ({ menuContents }: Props) => {
-  const { openTargetRef, isOpen, onClickOpenHandler } = useOpen();
+  const { openTargetRef, isOpen, openEventHandler } = useOpen();
 
   return (
     <div css={pullDownButtonContainer} ref={openTargetRef}>
-      <button css={buttonStyle} type="button" onClick={onClickOpenHandler}>
+      <button css={buttonStyle} type="button" onClick={openEventHandler}>
         <MenuIcon />
       </button>
 

@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import { css } from '@emotion/react';
-import { styleTheme } from '../theme/theme';
-import { useOpen } from '../hooks/ui/useOpen';
+import { styleTheme } from '../../providers/theme/theme';
+import { useOpen } from '../../hooks/ui/useOpen';
 
 interface Options {
   id: string;
