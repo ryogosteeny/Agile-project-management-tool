@@ -1,5 +1,5 @@
 import React from 'react';
-import { styleTheme } from '../../theme/theme';
+import { styleTheme } from '../../providers/theme/theme';
 
 interface Props {
   size?: number;
