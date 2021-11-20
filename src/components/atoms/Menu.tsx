@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/react';
-import { styleTheme } from '../../providers/theme/theme';
+import { styleTheme } from '../../theme/theme';
 import { useOpen } from '../../hooks/ui/useOpen';
 import { MenuIcon } from '../icons/MenuIcon';
 

@@ -1,7 +1,7 @@
 import React, { ReactNode, VFC } from 'react';
 import emotionReset from 'emotion-reset';
 import { Global, css, ThemeProvider } from '@emotion/react';
-import { styleTheme } from './theme';
+import { styleTheme } from './../theme/theme';
 
 interface Props {
   children: ReactNode;

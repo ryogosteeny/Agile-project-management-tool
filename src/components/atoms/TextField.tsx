@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/react';
-import { styleTheme } from '../../providers/theme/theme';
+import { styleTheme } from '../../theme/theme';
 
 export interface Props {
   value: string;
