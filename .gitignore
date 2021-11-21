@@ -20,3 +20,5 @@ yarn-error.log*
 
 # build-storybook.log
 build-storybook.log
+
+.idea/
