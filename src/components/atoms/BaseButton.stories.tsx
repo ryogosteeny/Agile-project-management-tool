@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { styleTheme } from '../theme/theme';
+import { styleTheme } from '../../theme/theme';
 import { BaseButton } from './BaseButton';
 
 export default {

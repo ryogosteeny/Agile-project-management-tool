@@ -1,5 +1,5 @@
 import React from 'react';
-import { styleTheme } from '../theme/theme';
+import { styleTheme } from '../../theme/theme';
 import { css } from '@emotion/react';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
