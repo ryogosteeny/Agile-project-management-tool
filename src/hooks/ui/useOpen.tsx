@@ -1,11 +1,6 @@
-import { RefObject, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-export interface UseOpenReturnType {
-  openTargetRef: RefObject<HTMLDivElement>;
-  isOpen: boolean;
-  openEventHandler: () => void;
-  closeEventHandler: () => void;
-}
+export type UseOpenReturnType = ReturnType<typeof useOpen>;
 
 export const useOpen = () => {
   const openTargetRef = useRef<HTMLDivElement>(null);

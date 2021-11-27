@@ -9,6 +9,10 @@ describe('useOpen', () => {
     result = renderHook(() => useOpen()).result;
   });
 
+  afterEach(() => {
+    act(() => result.current.closeEventHandler());
+  });
+
   test('openEventHandlerを呼び出したときに、isOpenがtrueに切り替わるか', () => {
     act(() => result.current.openEventHandler());
 
@@ -16,6 +20,7 @@ describe('useOpen', () => {
   });
 
   test('closeEventHandlerを呼び出したときに、isOpenがfalseに切り替わるか', () => {
+    act(() => result.current.openEventHandler());
     act(() => result.current.closeEventHandler());
 
     expect(result.current.isOpen).toBe(false);
