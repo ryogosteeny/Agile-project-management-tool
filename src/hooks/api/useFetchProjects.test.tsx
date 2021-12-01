@@ -9,6 +9,7 @@ const queryCache = new QueryCache();
 const queryClient = new QueryClient({
   queryCache,
 });
+
 const wrapper = ({ children }: { children: ReactNode }) => (
   <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 );
@@ -18,6 +19,7 @@ describe('useFetchProjects,useQueryWrapperのテスト', () => {
     axiosMock.reset();
     queryCache.clear();
   });
+
   const MockAdapter = require('axios-mock-adapter');
   const axiosMock = new MockAdapter(axiosInstance);
 
