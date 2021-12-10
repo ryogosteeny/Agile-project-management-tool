@@ -1,11 +1,3 @@
-import { QueryKey, UseQueryOptions } from 'react-query';
-
-export interface TUseQueryOptions<T> {
-  params?: T;
-  deps?: QueryKey;
-  options?: UseQueryOptions;
-}
-
 // Project Functions
 export interface Project {
   id: string;

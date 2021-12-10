@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 axios.defaults.withCredentials = true;
 
@@ -7,7 +7,7 @@ export const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.response.use(
-  (response) => {
+  (response: AxiosResponse) => {
     return Promise.resolve(response);
   },
   (error) => {
