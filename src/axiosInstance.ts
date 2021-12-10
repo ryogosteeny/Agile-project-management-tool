@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
@@ -7,12 +7,12 @@ export const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.response.use(
-  (response: AxiosResponse) => {
+  (response) => {
     return Promise.resolve(response);
   },
   (error) => {
     if (error.response.data.status === 500) {
-      // TODO エラーハンドリングを書く
+      // TODO 500ページへ遷移する処理を書く
       return false;
     }
   }

@@ -1,13 +1,12 @@
-import { UseQueryResult } from 'react-query';
+import { useQuery } from 'react-query';
 import { axiosInstance } from '../../axiosInstance';
-import { Project, TUseQueryOptions } from './types';
-import { useQueryWrapper } from './useQueryWrapper';
+import { Project } from './types';
 
-export const useFetchProjects = ({ deps, options, params }: TUseQueryOptions<{}>): UseQueryResult<Project[]> => {
-  return useQueryWrapper<Project[]>({
-    queryKey: 'Projects',
-    deps,
-    options,
-    req: () => axiosInstance.get('/projects', { params }),
-  });
+export const fetchProjects = async (): Promise<Project> => {
+  const { data } = await axiosInstance.get<Project>(`/projects`);
+  return data;
+};
+
+export const useFetchProjects = () => {
+  return useQuery('Projects', fetchProjects);
 };
