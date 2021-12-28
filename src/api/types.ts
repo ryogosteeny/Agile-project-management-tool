@@ -6,6 +6,6 @@ export interface Project {
   name: string;
   leaderID: string;
   defaultAssigneeID: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
