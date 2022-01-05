@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleThemeProvider } from '../src/theme/StyleThemeProvider';
+import { StyleThemeProvider } from '../src/providers/StyleThemeProvider';
 
 export const decorators = [
   (Story) => (
