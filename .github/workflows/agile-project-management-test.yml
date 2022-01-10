@@ -1,4 +1,4 @@
-name: agile-project-management-CI
+name: agile-project-management-test
 
 on: pull_request
 

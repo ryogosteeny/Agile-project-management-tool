@@ -1,4 +1,4 @@
-name: chromatic-CI
+name: chromatic-build
 
 on:
   push:
