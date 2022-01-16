@@ -4,23 +4,31 @@ import { Card } from './Card';
 import { styleTheme } from '../../theme/theme';
 
 export default {
-  title: 'Card',
+  title: 'atoms/Card',
   component: Card,
   argTypes: {
     width: {
       control: {
         type: 'range',
-        min: 0,
+        min: 200,
         max: 500,
       },
     },
   },
 } as Meta;
 
-const Template: Story = (args) => {
+interface CardStory {
+  projectColor: string;
+  title: string;
+  projectData: { key: string; value: string }[];
+  onClick: () => void;
+  width: number;
+}
+
+const Template: Story<CardStory> = (args) => {
   return (
     <div style={args}>
-      <Card projectData={[]} projectColor={''} title={''} onClick={() => {}} {...args} />
+      <Card {...args} />
     </div>
   );
 };
