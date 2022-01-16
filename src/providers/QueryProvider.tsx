@@ -16,7 +16,7 @@ export const QueryProvider: VFC<Props> = ({ children }: Props) => {
       },
     },
   });
-  
+
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={true} position="bottom-right" />

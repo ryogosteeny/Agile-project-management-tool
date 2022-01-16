@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
+export type UseOpenReturnType = ReturnType<typeof useOpen>;
+
 export const useOpen = () => {
   const openTargetRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
 
   const openEventHandler = () => {
     setIsOpen(!isOpen);
@@ -23,7 +24,6 @@ export const useOpen = () => {
     document.addEventListener('mousedown', handleOutsideClick);
     return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, []);
-
 
   return { openTargetRef, isOpen, closeEventHandler, openEventHandler };
 };
