@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { TextField } from './TextField';
 
 export default {
-  title: 'TextField',
+  title: 'atoms/TextField',
   component: TextField,
   argTypes: {
     width: {

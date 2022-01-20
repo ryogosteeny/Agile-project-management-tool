@@ -3,7 +3,7 @@ import { Select } from './Select';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
 export default {
-  title: 'Select',
+  title: 'atoms/Select',
   component: Select,
   parameters: {
     layout: 'centered',
