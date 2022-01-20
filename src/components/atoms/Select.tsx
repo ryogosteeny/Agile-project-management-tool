@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { styleTheme } from '../../theme/theme';
 import { useOpen } from '../../hooks/ui/useOpen';
 
-interface Options {
+export interface Options {
   id: string;
   value: string;
 }
@@ -88,6 +88,7 @@ const inputSelectStyle = css`
   overflow: hidden auto;
   position: absolute;
   top: 18px;
+  height: 36px;
 `;
 
 const inputTextStyle = css`
@@ -101,18 +102,20 @@ const inputTextStyle = css`
   overflow: hidden auto;
   position: absolute;
   top: 18px;
+  height: 36px;
 `;
 
 const selectStyle = css`
+  background-color: #ffffff;
   border: 1px solid ${styleTheme.colors.border.main};
   border-radius: ${styleTheme.borderRadius.regular}px;
   box-shadow: 2px 3px 4px gainsboro;
   margin: ${styleTheme.spacing(0.5)}px;
   max-width: 100%;
   width: 100%;
-  position: absolute;
-  top: 50px;
-  right: -4px;
+  position: relative;
+  top: 40px;
+  right: 4px;
   &:focus {
     outline: none;
   }

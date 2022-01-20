@@ -25,6 +25,7 @@ const textFieldStyle = css`
   border-radius: ${styleTheme.borderRadius.regular}px;
   padding: ${styleTheme.spacing(1)} ${styleTheme.spacing(0.75)};
   max-width: 100%;
+  height: 36px;
 `;
 
 const labelStyle = css`

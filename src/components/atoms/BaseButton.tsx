@@ -16,6 +16,8 @@ export const BaseButton = ({ textColor, backGroundColor, hoverColor, onClick, ..
 };
 
 const buttonStyle = (textColor: string, backGroundColor: string, hoverColor: string) => css`
+  width: 100%;
+  height: 100%;
   padding: ${styleTheme.spacing(0.5)}px ${styleTheme.spacing(1)}px;
   border-radius: ${styleTheme.borderRadius.regular}px;
   color: ${textColor};

@@ -1,11 +1,14 @@
 import React, { ReactNode, VFC } from 'react';
 import emotionReset from 'emotion-reset';
 import { Global, css, ThemeProvider } from '@emotion/react';
-import { styleTheme } from './../theme/theme';
+import { styleTheme } from '../theme/theme';
 
 interface Props {
   children: ReactNode;
 }
+
+export const breakPoint = [1023, 767];
+export const mediaQuery = breakPoint.map((bp: number) => `@media(max-width: ${bp}px)`);
 
 export const StyleThemeProvider: VFC<Props> = ({ children }) => {
   return (
