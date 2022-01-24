@@ -7,8 +7,10 @@ interface Props {
   children: ReactNode;
 }
 
-export const breakPoint = [1024, 768];
-export const mediaQuery = breakPoint.map((bp: number) => `@media(max-width: ${bp}px)`);
+export const { tablet, mobile } = {
+  tablet: `@media(max-width: 1024px)`,
+  mobile: `@media(max-width: 768px)`,
+};
 
 export const StyleThemeProvider: VFC<Props> = ({ children }) => {
   return (
