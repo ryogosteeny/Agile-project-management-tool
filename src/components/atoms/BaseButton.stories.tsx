@@ -4,7 +4,7 @@ import { styleTheme } from '../../theme/theme';
 import { BaseButton } from './BaseButton';
 
 export default {
-  title: 'BaseButton',
+  title: 'atoms/BaseButton',
   component: BaseButton,
   parameters: {
     layout: 'centered',

@@ -4,7 +4,7 @@ import { Menu } from './Menu';
 import { styleTheme } from '../../theme/theme';
 
 export default {
-  title: 'Menu',
+  title: 'atoms/Menu',
   component: Menu,
   parameters: {
     layout: 'centered',
