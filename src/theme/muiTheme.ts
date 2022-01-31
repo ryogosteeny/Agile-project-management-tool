@@ -16,7 +16,6 @@ declare module '@mui/material/styles' {
 const fontFamily = ['Noto Sans JP', 'メイリオ', 'ＭＳ Ｐゴシック', 'sans-serif'].join(',');
 
 export const muiTheme = createTheme({
-  ...styleTheme,
   typography: {
     fontFamily: fontFamily,
     fontWeightRegular: 600,
