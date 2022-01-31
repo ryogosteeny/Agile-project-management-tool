@@ -1,7 +1,9 @@
 import React, { ReactNode, VFC } from 'react';
 import emotionReset from 'emotion-reset';
 import { Global, css, ThemeProvider } from '@emotion/react';
-import { styleTheme } from './../theme/theme';
+import { ThemeProvider as MuiThemeProvider } from '@mui/material';
+import { styleTheme } from '../theme/theme';
+import { muiTheme } from '../theme/muiTheme';
 
 interface Props {
   children: ReactNode;
@@ -9,9 +11,10 @@ interface Props {
 
 export const StyleThemeProvider: VFC<Props> = ({ children }) => {
   return (
-    <ThemeProvider theme={styleTheme}>
-      <Global
-        styles={css`
+    <MuiThemeProvider theme={muiTheme}>
+      <ThemeProvider theme={styleTheme}>
+        <Global
+          styles={css`
           ${emotionReset}
           html {
             font-size: 62.5%;
@@ -79,8 +82,9 @@ export const StyleThemeProvider: VFC<Props> = ({ children }) => {
             outline: 'none;
           }
         `}
-      />
-      {children}
-    </ThemeProvider>
+        />
+        {children}
+      </ThemeProvider>
+    </MuiThemeProvider>
   );
 };
