@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material';
-import { styleTheme } from './theme';
 
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
