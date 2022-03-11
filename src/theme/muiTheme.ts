@@ -11,14 +11,14 @@ declare module '@mui/material/styles' {
     tablet: true;
   }
 }
-
-const fontFamily = ['Noto Sans JP', 'メイリオ', 'ＭＳ Ｐゴシック', 'sans-serif'].join(',');
+const fontFamily = ['Noto Sans JP', 'sans-serif'].join(',');
 
 export const muiTheme = createTheme({
   typography: {
     fontFamily: fontFamily,
-    fontWeightRegular: 600,
+    fontWeightRegular: 400,
     fontWeightMedium: 500,
+    fontWeightBold: 700,
   },
   palette: {
     primary: {
