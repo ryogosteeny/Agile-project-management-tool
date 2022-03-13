@@ -9,6 +9,7 @@ module.exports = {
     options.presets.push('@emotion/babel-preset-css-prop');
     return options;
   },
+  // muiThemeをsbで適用させる為`https://github.com/mui/material-ui/issues/24282#issuecomment-951015101`を参照
   webpackFinal(config) {
     delete config.resolve.alias['emotion-theming'];
     delete config.resolve.alias['@emotion/styled'];

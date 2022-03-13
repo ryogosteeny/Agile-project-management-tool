@@ -5,6 +5,10 @@ import { muiTheme } from '../src/theme/muiTheme';
 export const decorators = [
   (Story) => (
     <MuiThemeProvider theme={muiTheme}>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet"
+      />
       <CssBaseline />
       <Story />
     </MuiThemeProvider>
