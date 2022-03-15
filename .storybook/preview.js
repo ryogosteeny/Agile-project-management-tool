@@ -1,11 +1,17 @@
 import React from 'react';
-import { StyleThemeProvider } from '../src/providers/StyleThemeProvider';
+import { CssBaseline, ThemeProvider as MuiThemeProvider } from '@mui/material';
+import { muiTheme } from '../src/theme/muiTheme';
 
 export const decorators = [
   (Story) => (
-    <StyleThemeProvider>
+    <MuiThemeProvider theme={muiTheme}>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet"
+      />
+      <CssBaseline />
       <Story />
-    </StyleThemeProvider>
+    </MuiThemeProvider>
   ),
 ];
 
