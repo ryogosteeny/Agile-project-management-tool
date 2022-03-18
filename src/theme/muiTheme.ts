@@ -47,4 +47,13 @@ export const muiTheme = createTheme({
       tablet: 1024,
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          minWidth: 0,
+        },
+      },
+    },
+  },
 });

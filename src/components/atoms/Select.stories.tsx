@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select } from './Select';
+import { Options, Select } from './Select';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
 export default {
@@ -19,33 +19,41 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => {
+interface SelectStory {
+  label: string;
+  options: Options[];
+  onChange: () => void;
+  defaultValue?: Options;
+  width: number;
+}
+
+const Template: Story<SelectStory> = (args) => {
   return (
     <div style={args}>
-      <Select labelText={''} options={[]} {...args} />
+      <Select {...args} />
     </div>
   );
 };
 
-export const ProjectCreatePage = Template.bind({});
-ProjectCreatePage.args = {
-  labelText: 'プロジェクトリード',
+export const ProjectLead = Template.bind({});
+ProjectLead.args = {
+  label: 'プロジェクトリード',
   options: [
-    { value: '斎藤', id: '1' },
-    { value: '中島', id: '2' },
-    { value: '田中', id: '3' },
+    { label: '斎藤', id: '1' },
+    { label: '中島', id: '2' },
+    { label: '田中', id: '3' },
   ],
   width: 352,
 };
 
-export const ProjectEditPage = Template.bind({});
-ProjectEditPage.args = {
-  labelText: 'プロジェクトリード',
+export const defaultAssignee = Template.bind({});
+defaultAssignee.args = {
+  label: '既定の担当者',
   options: [
-    { value: '斎藤', id: '1' },
-    { value: '中島', id: '2' },
-    { value: '田中', id: '3' },
+    { label: '未割り当て', id: '0' },
+    { label: '斎藤', id: '1' },
+    { label: '中島', id: '2' },
+    { label: '田中', id: '3' },
   ],
   width: 352,
-  defaultValue: { value: '中島', id: '2' },
 };
