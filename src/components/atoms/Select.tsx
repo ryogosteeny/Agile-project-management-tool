@@ -16,7 +16,7 @@ interface Props {
 export const Select = ({ label, options, onChange, defaultValue }: Props) => {
   return (
     <div>
-      <InputLabel sx={{ fontSize: '1.4rem', color: 'text.primary', display: 'block', mb: 0.5 }}>{label}</InputLabel>
+      <InputLabel sx={{ fontWeight: 'bold', color: 'text.primary', display: 'block', mb: 0.5 }}>{label}</InputLabel>
       <Autocomplete
         renderInput={(params) => <TextField {...params} />}
         options={options}

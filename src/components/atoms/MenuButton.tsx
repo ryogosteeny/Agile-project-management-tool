@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { MenuIcon } from '../icons/MenuIcon';
 import { useOpen } from '../../hooks/ui/useOpen';
+import { ICON_HEIGHT, ICON_WIDTH } from '../../constants/styles';
 
 export interface menuContents {
   label: string;
@@ -19,7 +20,7 @@ export const MenuButton = ({ menuContents }: Props) => {
     <div>
       <Button
         onClick={handleOpen}
-        sx={{ width: '32px', height: '32px', p: 0, bgcolor: 'secondary.main', color: 'secondary.dark' }}
+        sx={{ width: ICON_WIDTH, height: ICON_HEIGHT, p: 0, bgcolor: 'secondary.main', color: 'secondary.dark' }}
       >
         <MenuIcon />
       </Button>
