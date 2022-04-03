@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { MenuIcon } from '../icons/MenuIcon';
 import { useOpen } from '../../hooks/ui/useOpen';
-import { ICON_HEIGHT, ICON_WIDTH } from '../../constants/styles';
+import { ICON_HEIGHT_REGULAR, ICON_WIDTH_REGULAR } from '../../constants/styles';
 
 export interface menuContents {
   label: string;
@@ -20,12 +20,19 @@ export const MenuButton = ({ menuContents }: Props) => {
     <div>
       <Button
         onClick={handleOpen}
-        sx={{ width: ICON_WIDTH, height: ICON_HEIGHT, p: 0, bgcolor: 'secondary.main', color: 'secondary.dark' }}
+        sx={{
+          width: ICON_WIDTH_REGULAR,
+          height: ICON_HEIGHT_REGULAR,
+          p: 0,
+          bgcolor: 'secondary.main',
+          color: 'secondary.dark',
+        }}
       >
         <MenuIcon />
       </Button>
       <Menu open={open} onClose={handleClose} anchorEl={anchorEl}>
         {menuContents.map((menuItem) => (
+          // todo インラインで書くのは計算量が多くなる為、後に修正する
           <MenuItem onClick={() => handleMenuItem(menuItem.event)} key={menuItem.label}>
             {menuItem.label}
           </MenuItem>

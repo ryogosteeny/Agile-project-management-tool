@@ -1,5 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
+import { action } from '@storybook/addon-actions';
 import { MenuButton, menuContents } from './MenuButton';
 
 export default {
@@ -22,12 +23,12 @@ export const PrimaryMenuButton = Template.bind({});
 PrimaryMenuButton.args = {
   menuContents: [
     {
-      label: 'ゴミ箱に移動する',
-      event: () => {},
+      label: 'MenuItem1',
+      event: action('MenuItem1'),
     },
     {
-      label: '違うページに移動',
-      event: () => {},
+      label: 'MenuItem2',
+      event: action('MenuItem2'),
     },
   ],
 };
