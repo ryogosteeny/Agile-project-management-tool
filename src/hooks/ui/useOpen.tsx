@@ -1,29 +1,21 @@
-import { useEffect, useRef, useState } from 'react';
-
-export type UseOpenReturnType = ReturnType<typeof useOpen>;
+import React, { useState } from 'react';
 
 export const useOpen = () => {
-  const openTargetRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
 
-  const openEventHandler = () => {
-    setIsOpen(!isOpen);
+  const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
   };
 
-  const closeEventHandler = () => {
-    setIsOpen(false);
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
-  const handleOutsideClick = (e: Event) => {
-    if (openTargetRef.current && !openTargetRef.current.contains(e.target as Node)) {
-      setIsOpen(false);
-    }
+  const handleMenuItem = (menuItemEvent: () => void) => {
+    menuItemEvent();
+    setAnchorEl(null);
   };
 
-  useEffect(() => {
-    document.addEventListener('mousedown', handleOutsideClick);
-    return () => document.removeEventListener('mousedown', handleOutsideClick);
-  }, []);
-
-  return { openTargetRef, isOpen, closeEventHandler, openEventHandler };
+  return { open, anchorEl, handleOpen, handleClose, handleMenuItem };
 };

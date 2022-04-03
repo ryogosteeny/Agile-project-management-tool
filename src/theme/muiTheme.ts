@@ -19,6 +19,16 @@ export const muiTheme = createTheme({
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
+    htmlFontSize: 10,
+    body1: {
+      fontSize: '1.4rem',
+    },
+    body2: {
+      fontSize: '1.2rem',
+    },
+    button: {
+      fontSize: '1.4rem',
+    },
   },
   palette: {
     primary: {
@@ -45,6 +55,15 @@ export const muiTheme = createTheme({
     values: {
       mobile: 768,
       tablet: 1024,
+    },
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        html: {
+          fontSize: '62.5%',
+        },
+      },
     },
   },
 });
