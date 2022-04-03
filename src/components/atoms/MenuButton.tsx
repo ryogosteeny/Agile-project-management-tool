@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Menu, MenuItem } from '@mui/material';
+import { ButtonBase, Menu, MenuItem } from '@mui/material';
 import { MenuIcon } from '../icons/MenuIcon';
 import { useOpen } from '../../hooks/ui/useOpen';
 import { ICON_HEIGHT_REGULAR, ICON_WIDTH_REGULAR } from '../../constants/styles';
@@ -18,7 +18,7 @@ export const MenuButton = ({ menuContents }: Props) => {
 
   return (
     <div>
-      <Button
+      <ButtonBase
         onClick={handleOpen}
         sx={{
           width: ICON_WIDTH_REGULAR,
@@ -26,13 +26,14 @@ export const MenuButton = ({ menuContents }: Props) => {
           p: 0,
           bgcolor: 'secondary.main',
           color: 'secondary.dark',
+          borderRadius: 1,
         }}
       >
         <MenuIcon />
-      </Button>
+      </ButtonBase>
       <Menu open={open} onClose={handleClose} anchorEl={anchorEl}>
         {menuContents.map((menuItem) => (
-          // todo インラインで書くのは計算量が多くなる為、後に修正する
+          // todo インラインで書くのは計算量が多くなりパフォーマンス面での懸念がある為、後に修正する
           <MenuItem onClick={() => handleMenuItem(menuItem.event)} key={menuItem.label}>
             {menuItem.label}
           </MenuItem>

@@ -65,12 +65,5 @@ export const muiTheme = createTheme({
         },
       },
     },
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          minWidth: 0,
-        },
-      },
-    },
   },
 });
