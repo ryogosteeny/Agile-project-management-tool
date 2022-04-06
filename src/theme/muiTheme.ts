@@ -20,6 +20,10 @@ export const muiTheme = createTheme({
     fontWeightMedium: 500,
     fontWeightBold: 700,
     htmlFontSize: 10,
+    h2: {
+      fontSize: '1.6rem',
+      fontWeight: 'bold',
+    },
     body1: {
       fontSize: '1.4rem',
     },
