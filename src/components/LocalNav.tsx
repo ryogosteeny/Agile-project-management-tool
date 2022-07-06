@@ -14,6 +14,7 @@ interface Props {
   localNavMenuItem: LocalNavMenuItem[];
 }
 
+// TODO ナビのwidthを動的に変えれる拡張をする
 export const LocalNav = ({ projectName, localNavMenuItem }: Props) => {
   return (
     <Paper
