@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, ListItemIcon, ListItemText, MenuItem, MenuList, Paper, Typography } from '@mui/material';
 import { LOCAL_NAVIGATION_DEFAULT_WIDTH } from '../constants/styles';
 
+// TODO 型ファイルに切り出す
 export interface LocalNavMenuItem {
   name: string;
   icon: JSX.Element;
